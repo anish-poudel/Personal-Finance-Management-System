@@ -62,6 +62,8 @@
       <button id="excelBtn" type="button">Export Excel</button>
       <button id="csvBtn" type="button" class="secondary">Export CSV</button>
       <button id="jsonBtn" type="button" class="secondary">Download JSON backup</button>
+      <button id="restoreLastBackupBtn" type="button" class="secondary" disabled>Restore last safety backup</button>
+      <button id="restorePreRestoreBackupBtn" type="button" class="secondary" disabled>Undo last backup restore</button>
       <label class="file-label" for="restoreInput">Restore JSON backup</label>
       <input id="restoreInput" type="file" accept="application/json,.json">
       <button id="printBtn" type="button" class="secondary">Print / Save as PDF</button>
@@ -148,11 +150,16 @@
         <tbody id="transactionRows"></tbody>
       </table>
     </div>
+    <div class="pagination" aria-label="Transaction table pages">
+      <button id="prevPageBtn" type="button" class="secondary" disabled>Previous</button>
+      <span id="pageInfo" aria-live="polite">Page 1 of 1</span>
+      <button id="nextPageBtn" type="button" class="secondary" disabled>Next</button>
+    </div>
   </section>
 
   <section class="panel">
     <h2>Data and privacy</h2>
-    <p class="hint">This version stores data in this browser on this device. GitHub Pages hosts the application code, not your private transaction data. Data is not automatically synchronized between devices. Download JSON backups regularly and keep them somewhere secure. No Firebase credentials or cloud-sync secrets are included.</p>
+    <p class="hint">Sync status: local-only. This version stores data in this browser on this device. GitHub Pages hosts the application code, not your private transaction data. Data is not automatically synchronized between devices. Download JSON backups regularly and keep them somewhere secure. Before deleting records or restoring a file, the app creates a safety backup in this browser. No Firebase credentials or cloud-sync secrets are included.</p>
     <button id="deleteMonthBtn" type="button" class="danger">Delete all transactions in selected BS month</button>
   </section>
 </main>
